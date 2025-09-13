@@ -1,0 +1,6 @@
+#sensible data
+.env
+#dont need to expose pnpm-lock file
+pnpm-lock.yaml
+#node modules
+node_modules

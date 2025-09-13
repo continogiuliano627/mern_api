@@ -1,17 +1,17 @@
 /* eslint-env node */
-const path = require('path');
+import "path";
 
 const eslintCommand = (filenames) =>
   `eslint --fix ${filenames
     .map((f) => path.relative(process.cwd(), f))
-    .join(' ')}`;
+    .join(" ")}`;
 
-const formatCommand = 'prettier --write';
+const formatCommand = "prettier --write";
 
 const funct = {
-  '*.{js,mjs,cjs}': [formatCommand, eslintCommand],
-  '*.{css,scss}': [formatCommand], // si luego agregas estilos
-  '!*.{js,mjs,cjs,css,scss}': [formatCommand],
+  "*.{js,mjs,cjs}": [formatCommand, eslintCommand],
+  "*.{css,scss}": [formatCommand], // si luego agregas estilos
+  "!*.{js,mjs,cjs,css,scss}": [formatCommand],
 };
 
 module.exports = funct;
